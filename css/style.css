@@ -2,13 +2,13 @@
 
 
 a {
-  
   text-decoration: none;
 }
-a:link {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+a:hover img {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
-
+  
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,6 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
   transition: .2s;
 }
 
@@ -78,6 +77,52 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.852);
+  position: relative;  
+  z-index: 0;
+  cursor: pointer;
+  border: none;
+}
+
+
+.btn:before {
+  content: '';
+  background: linear-gradient(45deg, #ff3e79, #f8f8f8);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 300%;
+  z-index: -1;
+  filter: blur(10px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn:active {
+  color: white;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:none;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 .header__text {
@@ -105,6 +150,11 @@ body {
   width: 97px;
   height: 51px;
 }
+.header__item a:hover img {
+  background-color: rgba(14, 14, 174, 0.606);
+  transition: .2s;
+}
+
 .header__item:nth-child(2)::before {
   content: "";
   position: absolute;
@@ -318,8 +368,8 @@ body {
   .nav-scroller {
     white-space: normal;
   }
-  .nav-scroller::before,
-  .nav-scroller::after {
+  .nav-scroller__list::before,
+  .nav-scroller__list::after {
     display: none;
   }
   .nav-scroller__list {
@@ -462,4 +512,6 @@ a span {
 .lang-radio input:checked + .lang-text {
   color:black;
   transition: .2s;
+  font-size: calc(100% + 1px);
+
 }
