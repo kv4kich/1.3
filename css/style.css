@@ -4,10 +4,7 @@
 a {
   text-decoration: none;
 }
-a:hover img {
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-}
+
   
 * {
   -webkit-tap-highlight-color: #ffffff00;
@@ -23,12 +20,19 @@ button {
   transition: .2s;
 }
 
+a:hover img {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
 ul,
 li {
   list-style: none;
 }
 
 /*burger*/
+
+
 #check-burger {
   position: absolute;
 }
@@ -68,10 +72,42 @@ body {
 }
 .header__list {
   margin: 16px;
-  width: 320px;
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items:center;
   gap: 20px;
+}
+
+.header__item:nth-child(2) {
+  flex-grow: 1;
+}
+
+.header__text {
+  font-size: 16px;
+  font-family: "TT Lakes";
+  display: none;
+}
+
+
+.header__item:nth-child(3),
+.header__item:nth-child(4),
+.header__item:nth-child(5) {
+  display: none;
+}
+.logo  {
+  display: flex;
+  width: 97px;
+  height: 51px;
+}
+
+.header__item:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  border-left: 2px solid #eaeaea;
+  top: 24px;
+  left: 68px;
+  height: 40px;
+  border-radius: 35%/5%;
 }
 
 .btn{
@@ -125,13 +161,6 @@ body {
   top: 0;
   border-radius: 10px;
 }
-
-.header__text {
-  font-size: 16px;
-  font-family: "TT Lakes";
-  display: none;
-}
-
 .button__img {
   height: 40px;
   width: 40px;
@@ -140,26 +169,6 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-}
-.header__item:nth-child(3),
-.header__item:nth-child(4),
-.header__item:nth-child(5) {
-  display: none;
-}
-.logo  {
-  display: flex;
-  width: 97px;
-  height: 51px;
-}
-
-.header__item:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  border-left: 2px solid #eaeaea;
-  top: 24px;
-  left: 68px;
-  height: 40px;
-  border-radius: 35%/5%;
 }
 
 
@@ -274,9 +283,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .header__list {
-    width: 768px;
-  }
+
   .header__item:nth-child(3),
   .header__item:nth-child(4),
   .header__item:nth-child(5),
@@ -284,9 +291,7 @@ body {
   .header__item:nth-child(7) {
     display: inherit;
   }
-  .header__item:nth-child(2) {
-    flex-grow: 1;
-  }
+
   .header__item:nth-child(5) {
     margin-right: 40px;
     position: relative;
@@ -355,6 +360,10 @@ body {
   .header__item:nth-child(2)::before {
     display: none;
   }
+  .header__text {
+    font-size: 18px;
+    display: inline-block;
+  }
 
   .title-text {
     left: calc((100% - 1120px) / 2);
@@ -373,6 +382,9 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
+
+
+
   .content {
     padding: 20px;
   }
@@ -391,10 +403,7 @@ body {
     height: 320px;
   }
 
-  .header__text {
-    font-size: 18px;
-    display: inline-block;
-  }
+
 }
 
 
