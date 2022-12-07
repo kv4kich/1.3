@@ -410,18 +410,17 @@ body {
 
 
 /* menu */
+.menu {
+  height: auto;
+} 
 
 .menu__body {
-  height: 1024px;
-  width: 320px;
-}
-
-.menu {
+  overflow-y:scroll;
   display: flex;
   flex-direction: column;
   width: 320px;
-  min-height: 100%;
-  padding: 24px;
+  min-height: 100vh;
+  padding: 16px;
   box-shadow: 0px 0px 30px 5px rgb(0 0 0 / 50%);
   background-color: #f8f8f8;
   font-family: "TT Lakes";
@@ -429,35 +428,29 @@ body {
 
 .menu__header {
   display: flex;
-  flex-direction: column;
-
-}
-.menu__header ul {
-  display: flex;
   gap: 16px;
-  align-items: center
+  align-items: center;
+  padding-bottom: 16px;
 }
-.menu__header ul li {
-  display: list-item;
-}
+
 
 .menu__header-item:nth-child(2){
   flex-grow: 1;
 }
 
 .menu__content {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  display: flex;
+  flex-grow: 1;
   
 }
 
-.menu__content nav ul {
+.menu__list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
-.menu__content nav ul li a::before {
+.menu__link::before {
   content: "";
   position: absolute;
   border-left: 8px solid #41f6d7;
@@ -469,15 +462,15 @@ body {
   transition: .2s;
 }
 
-.menu__content nav ul li:hover a::before {
+.menu__item:hover .menu__link::before {
   left: -4px;
 }
-.menu__content nav ul li:hover a .menu__text {
+.menu__item:hover .menu__link .menu__text {
   color: rgba(126, 126, 130, 1);
   transition: .2s;
 }
 
-a span {
+.menu__link .menu__text {
   color: rgba(27, 28, 33, 1);
 }
 .menu__footer {
@@ -494,7 +487,7 @@ a span {
   margin-top: 16px;
 }
 
-.footer__phone a span {
+.footer__phone .menu__link .mene__text {
   color: black;
   font-size: 24px;
   line-height: 32px;
@@ -502,10 +495,11 @@ a span {
 }
 
 .footer__lang {
-  height: 20px;
-  width: 20px;
+  display: flex;
+  justify-content: flex-start;
+
   padding-top: 40px;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 }
 
 .lang-text {
@@ -518,6 +512,26 @@ a span {
 .lang-radio input:checked + .lang-text {
   color:black;
   transition: .2s;
-  font-size: calc(100% + 1px);
-
+  transform: scale(1.5, 1.5);
 }
+
+
+/* services */
+.services__body {
+  position: relative;
+  width: 100%;
+  height: 234px;
+  background: #F8F8F8;
+}
+
+.services__header {
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.swiper-wrapper {
+  
+}
+
