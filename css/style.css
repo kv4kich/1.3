@@ -20,7 +20,7 @@ button {
   transition: .2s;
 }
 
-a:hover img {
+.menu__link:hover img {
   width: calc(100% + 2px);
   height: calc(100% + 2px);
 }
@@ -267,6 +267,7 @@ body {
 }
 
 .content__button {
+  visibility: hidden;
   display: flex;
   background-color: #f8f8f8;
   font-family: TT Lakes;
@@ -520,18 +521,100 @@ body {
 .services__body {
   position: relative;
   width: 100%;
-  height: 234px;
   background: #F8F8F8;
+
 }
 
 .services__header {
   height: 80px;
   width: 100%;
-  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #41f6d7;
 }
 
-.swiper-wrapper {
+.services__title {
+  display: flex;
+  font-family: 'TT Lakes';
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: #7E7E82;
+  padding: 16px;
+}
+
+.swiper {
+  margin: 16px ;
+  position: relative;
+}
+
+.swiper:after {
+  right: 0px;
+  top: 0px;
+  content: "";
+  position: absolute;
+  width: 32px;
+  background-image:  linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  height: 71px;
+  z-index: 1;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: auto;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  
+  background-color: rgba(221, 221, 221, 1) ;
+  opacity: 1;
+
+}
+
+.swiper-pagination-bullet-active {
+  background-color:  rgba(181, 182, 188, 1);
+}
+
+
+.slide {
+  border: rgba(234, 234, 234, 1) 1px solid;
+  border-radius: 6px;
+  height: 72px;
+  background-color: #ffffff;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding:  16px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .swiper-wrapper {
+    flex-wrap: wrap;
+    display: grid;
+    justify-content: center;
+    row-gap: 16px;
+    column-gap: 24px;
+    grid-template-columns:  224px 224px 224px;
+
+  }
+  .swiper:after {
+    display: none;
+  }
+  .content__button {
+    visibility: visible;
+  }
   
 }
 
+@media screen and (min-width: 1120px) {
+  .swiper-wrapper {
+    grid-template-columns: 240px 240px 240px 240px;
+  }
+}
+
+/* show all */
