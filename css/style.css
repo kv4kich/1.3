@@ -599,9 +599,6 @@ body {
   }
   .is-visible {
     height: 100%;
-    overflow:visible;
-    transition-property:  height;
-    transition-duration:  0.5s;
   }
   .show-more--passive::before {
     content: url("../img/svg/arrow.svg") ; 
@@ -613,10 +610,8 @@ body {
   .swiper:after {
     display: none;
   }
-
   .content__button {
     display: flex;
-    grid-column: 1/3;
   }
 }
 
@@ -624,9 +619,5 @@ body {
   .services__body {
     width: 1120px;
   }
-  .section__slider {
-    grid-template-columns: 240px 240px 240px 240px;
-  }
-
 }
 
